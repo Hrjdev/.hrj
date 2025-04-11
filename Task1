@@ -1,0 +1,27 @@
+public class Task1 {
+
+    public static boolean hasMoreVowels(String str) {
+        return countVowels(str.toLowerCase(), 0, 0, 0);
+    }
+
+    private static boolean countVowels(String str, int index, int vowelCount, int consonantCount) {
+        if (index == str.length()) {
+            return vowelCount > consonantCount;
+        }
+
+        char ch = str.charAt(index);
+        if (Character.isLetter(ch)) {
+            if (isVowel(ch)) {
+                vowelCount++;
+            } else {
+                consonantCount++;
+            }
+        }
+
+        return countVowels(str, index + 1, vowelCount, consonantCount);
+    }
+
+    private static boolean isVowel(char ch) {
+        return "aeiou".indexOf(ch) != -1;
+    }
+}
