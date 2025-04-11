@@ -1,0 +1,34 @@
+public class Main {
+    public static void main(String[] args) {
+        // Task 1: Vowel comparison
+        String testStr = "Education";
+        System.out.println("Task 1: Has more vowels than consonants? " +
+                Task1.hasMoreVowels(testStr));
+
+        // Task 2: Recursive linear search
+        int[] arr = {4, 7, 1, 3, 9};
+        int target = 3;
+        System.out.println("Task 2: Target " + target + " found at index: " +
+                Task2.recursiveLinearSearch(arr, 0, target));
+
+        // Task 3: BST operations
+        Task3 bst = new Task3();
+        TreeNode root = null;
+        int[] values = {10, 5, 15, 3, 7, 13, 18};
+
+        for (int val : values) {
+            root = bst.insert(root, val);
+        }
+
+        System.out.println("Task 3: Min (Iterative): " + bst.iterativeFindMinimum(root));
+        System.out.println("Task 3: Max (Iterative): " + bst.iterativeFindMaximum(root));
+        System.out.println("Task 3: Min (Recursive): " + bst.recursiveFindMinimum(root));
+        System.out.println("Task 3: Max (Recursive): " + bst.recursiveFindMaximum(root));
+
+        TreeNode found = bst.findElement(root, 7);
+        System.out.println("Task 3: Found node with value 7: " + (found != null ? "Yes" : "No"));
+
+        System.out.println("Task 3: Total Nodes: " + bst.countNodes(root));
+        System.out.println("Task 3: Total Leaves: " + bst.countLeaves(root));
+    }
+}
