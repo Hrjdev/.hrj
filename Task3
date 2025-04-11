@@ -1,0 +1,77 @@
+class TreeNode {
+    int TreeNodeData;
+    TreeNode TreeNodeLeft;
+    TreeNode TreeNodeRight;
+
+    TreeNode(int value) {
+        TreeNodeData = value;
+        TreeNodeLeft = null;
+        TreeNodeRight = null;
+    }
+}
+
+public class Task3 {
+
+    public TreeNode insert(TreeNode node, int value) {
+        if (node == null) {
+            return new TreeNode(value);
+        }
+
+        if (value < node.TreeNodeData) {
+            node.TreeNodeLeft = insert(node.TreeNodeLeft, value);
+        } else if (value > node.TreeNodeData) {
+            node.TreeNodeRight = insert(node.TreeNodeRight, value);
+        }
+
+        return node;
+    }
+
+    public int iterativeFindMinimum(TreeNode node) {
+        if (node == null) return -1;
+        while (node.TreeNodeLeft != null) {
+            node = node.TreeNodeLeft;
+        }
+        return node.TreeNodeData;
+    }
+
+    public int iterativeFindMaximum(TreeNode node) {
+        if (node == null) return -1;
+        while (node.TreeNodeRight != null) {
+            node = node.TreeNodeRight;
+        }
+        return node.TreeNodeData;
+    }
+
+    public int recursiveFindMinimum(TreeNode node) {
+        if (node == null) return -1;
+        if (node.TreeNodeLeft == null) return node.TreeNodeData;
+        return recursiveFindMinimum(node.TreeNodeLeft);
+    }
+
+    public int recursiveFindMaximum(TreeNode node) {
+        if (node == null) return -1;
+        if (node.TreeNodeRight == null) return node.TreeNodeData;
+        return recursiveFindMaximum(node.TreeNodeRight);
+    }
+
+    public TreeNode findElement(TreeNode node, int target) {
+        if (node == null || node.TreeNodeData == target) return node;
+
+        if (target < node.TreeNodeData) {
+            return findElement(node.TreeNodeLeft, target);
+        } else {
+            return findElement(node.TreeNodeRight, target);
+        }
+    }
+
+    public int countNodes(TreeNode node) {
+        if (node == null) return 0;
+        return 1 + countNodes(node.TreeNodeLeft) + countNodes(node.TreeNodeRight);
+    }
+
+    public int countLeaves(TreeNode node) {
+        if (node == null) return 0;
+        if (node.TreeNodeLeft == null && node.TreeNodeRight == null) return 1;
+        return countLeaves(node.TreeNodeLeft) + countLeaves(node.TreeNodeRight);
+    }
+}
