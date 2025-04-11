@@ -1,0 +1,12 @@
+public class Task2 {
+
+    public static int recursiveLinearSearch(int[] arr, int index, int target) {
+        if (index >= arr.length) {
+            return -1;
+        }
+        if (arr[index] == target) {
+            return index;
+        }
+        return recursiveLinearSearch(arr, index + 1, target);
+    }
+}
