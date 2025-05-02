@@ -1,0 +1,65 @@
+public class SortingAlgorithms {
+
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int current = arr[i];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j] > current) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+
+            arr[j + 1] = current;
+        }
+    }
+
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // Swap
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+
+    public static void main(String[] args) {
+        int[] original = {29, 10, 14, 37, 13};
+
+        int[] insertionInput = original.clone();
+        System.out.println("Insertion Sort:");
+        System.out.print("Orijinal: ");
+        printArray(insertionInput);
+        insertionSort(insertionInput);
+        System.out.print("Sıralı:   ");
+        printArray(insertionInput);
+
+        System.out.println();
+
+        int[] selectionInput = original.clone();
+        System.out.println("Selection Sort:");
+        System.out.print("Orijinal: ");
+        printArray(selectionInput);
+        selectionSort(selectionInput);
+        System.out.print("Sıralı:   ");
+        printArray(selectionInput);
+    }
+}
