@@ -1,0 +1,140 @@
+/* Genel sayfa ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Footer'ı her zaman en alta itmek için ekranı tamamen kaplar */
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    font-size: 13px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Üstteki alanı sağ tarafa alma (Yönerge) */
+.top-nav {
+    display: flex;
+    justify-content: flex-end; /* İçeriği en sağa yaslar */
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px; /* Elemanlar arasına boşluk bırakır */
+}
+
+/* Fotoğraf kenarlarını yarıçap özelliği ile düzenleme (Yönerge) */
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* Fotoğrafı tam yuvarlak yapar */
+    cursor: pointer;
+}
+
+.apps-icon {
+    cursor: pointer;
+    opacity: 0.6; /* İkonun rengini biraz soluklaştırır */
+}
+
+/* Ana içerik alanını esnetip ortalama */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* Üstten boşluk */
+    flex-grow: 1; /* Ana içeriğin boş alanı kaplamasını sağlar */
+}
+
+.logo {
+    width: 272px; /* Orijinal logoya uygun boyutlandırma */
+    margin-bottom: 30px;
+}
+
+/* Arama yapılacak alanın kenarlarını yarıçap ile düzenleme (Yönerge) */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px; /* Kenarları ovalleştirir */
+    padding: 5px 15px;
+}
+
+/* Arama alanına gölge ekleme efekti */
+.search-container:hover {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: rgba(223,225,229,0);
+}
+
+/* Arama alanı içindeki input (Yönerge: genişlik 480px, kenarlık yok) */
+.search-input {
+    width: 480px; 
+    border: none; /* Kenarlığı kaldırır */
+    outline: none; /* Tıklayınca oluşan varsayılan çizgiyi kaldırır */
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+.search-icon {
+    width: 20px;
+    opacity: 0.4;
+}
+
+.mic-icon {
+    width: 24px;
+    cursor: pointer;
+}
+
+/* Buttonları ortaya alma ve üstten boşluk verme (Yönerge) */
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Ortalar */
+    margin-top: 25px; /* Üstten boşluk verir */
+}
+
+/* Butonun genel özellikleri */
+.google-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #f2f2f2; /* Yönerge: 1px kalın #f2f2f2 renginde olmalı */
+    font-family: Arial, sans-serif; /* Yönerge: Arial olmalı */
+    color: #5f6368; /* Yönerge: yazı rengi #5f6368 olmalı */
+    font-size: 14px; /* Yönerge: yazı boyutu 14px olmalı */
+    height: 36px; /* Yönerge: yüksekliği 36px olmalı */
+    padding: 0 16px;
+    border-radius: 4px;
+    margin-right: 12px; /* Yönerge: sağından boşluklar veriniz */
+    cursor: pointer;
+}
+
+/* Buttonlara aynı arama alanında olduğu gibi gölge veriniz (Yönerge) */
+.google-btn:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1); /* Tıklanabilir hissi için hafif gölge */
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+/* Footer arka plan rengini #f2f2f2 yapınız (Yönerge) */
+.footer {
+    background-color: #f2f2f2; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-top: 1px solid #e4e4e4;
+}
+
+/* Liste noktalarını ortadan kaldırın (Yönerge) */
+.footer-links {
+    list-style-type: none; /* Liste başındaki noktaları siler */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px; /* Yan yana gelen yazılar arasına boşluk bırakır */
+}
+
+.footer-links a {
+    color: #70757a;
+    font-size: 14px;
+}
