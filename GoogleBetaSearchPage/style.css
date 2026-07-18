@@ -1,0 +1,74 @@
+/* Sayfanın genel yazı tipi ayarları (Eski görünüm için tırnaklı font) */
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tüm içeriği ortalayan ana kapsayıcı */
+.container {
+    text-align: center; /* Yazıları ve içiçe elemanları ortalar */
+    width: 85%;
+    margin: 50px auto 0 auto; /* Üstten 50px boşluk bırakır, sağdan soldan otomatik ortalar */
+}
+
+/* Logo boyutlandırması */
+.logo {
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+/* Arama kutusu ayarları */
+.search-text {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.search-box {
+    width: 350px;
+    margin-bottom: 15px;
+}
+
+/* Butonların arasına boşluk bırakıyoruz */
+.buttons button {
+    margin: 0 5px;
+}
+
+/* 3 kolonlu turkuaz alt kutu (Flexbox yapısı kullanıldı) */
+.footer-box {
+    background-color: #7EE5DA; /* Görseldeki turkuaz renk */
+    display: flex; /* Elemanları yan yana dizer */
+    justify-content: space-around; /* 3 kolonu eşit aralıklarla dağıtır */
+    align-items: flex-start; /* Kolon içeriklerini üstten hizalar */
+    padding: 15px 10px;
+    margin-top: 30px;
+}
+
+/* Kolonların içindeki yazıların standart boyutları */
+.column {
+    font-size: 14px;
+    text-align: center;
+}
+
+.column p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Mavi tıklanabilir linklerin renkleri */
+.column a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+/* Mail giriş kutusunun boyutu */
+.email-box {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+/* En alttaki telif hakkı yazısı */
+.copyright {
+    margin-top: 25px;
+    font-size: 12px;
+}
